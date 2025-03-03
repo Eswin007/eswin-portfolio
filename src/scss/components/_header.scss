@@ -1,0 +1,23 @@
+.header-wrap {
+  background-color: var(--bg-dark-800);
+}
+.header {
+  margin-inline: auto;
+  padding-block: 1rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: var(--text-pure);
+
+  justify-content: space-between;
+  &__menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__item-link {
+    color: var(--text-pure);
+    text-decoration: none;
+  }
+}
