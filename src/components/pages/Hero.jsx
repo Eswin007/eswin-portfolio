@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import Social from "../Social";
 
 const Hero = () => {
   const [text, setText] = useState("Figma dreams meet React reality");
-  const onHoverHandler = () => {
+  const onMouseOverHandler = () => {
     setText(
       <>
         with <i>minor</i> debugging meltdowns
@@ -23,7 +24,7 @@ const Hero = () => {
         <div className="hero__right">
           <div
             className="hero__title title2"
-            onMouseOver={onHoverHandler}
+            onMouseOver={onMouseOverHandler}
             onMouseLeave={onMouseLeaveHandler}
           >
             {"<coder>"}
@@ -31,6 +32,7 @@ const Hero = () => {
           <div className="hero__subtitle">{text}</div>
         </div>
       </div>
+      <Social />
     </div>
   );
 };

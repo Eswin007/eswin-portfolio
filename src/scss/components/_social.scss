@@ -1,0 +1,25 @@
+.social-wrap {
+  background-color: var(--bg-dark-800);
+}
+.social {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin-inline: auto;
+  justify-content: center;
+  height: 8rem;
+
+  &__link {
+    text-decoration: none;
+    color: var(--text-pure);
+    font-size: 1.75rem;
+    padding: 1rem;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

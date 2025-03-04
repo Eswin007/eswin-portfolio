@@ -1,15 +1,15 @@
 import { useState } from "react";
 import "./scss/main.scss";
-import Hero from "./components/Hero";
 import Header from "./components/Header";
+import { Outlet } from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
     <>
       <Header />
-      <Hero />
+      <Outlet />
     </>
   );
-}
+};
 
 export default App;
