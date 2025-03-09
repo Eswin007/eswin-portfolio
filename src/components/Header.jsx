@@ -8,7 +8,7 @@ const Header = () => {
     <div className="header-wrap ">
       <header className="header max-width-wrap">
         <div className="header__logo">
-          <NavLink to="/">ED</NavLink>
+          <NavLink to="/">Eswin Dixon</NavLink>
         </div>
         <menu className="header__menu">
           {links.map((link) => (

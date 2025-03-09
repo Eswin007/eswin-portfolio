@@ -1,0 +1,25 @@
+.about-wrap {
+  .about {
+    margin-inline: auto;
+    padding-block: 5rem;
+    color: var(--text-dark-800);
+    &__title {
+      font-size: 5.125rem;
+      font-weight: bold;
+    }
+    &__subtitle {
+      font-family: var(--fs-secondary);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &__body {
+      font-family: var(--fs-secondary);
+      font-size: 1.125rem;
+      margin-top: 1rem;
+      line-height: 1.5;
+      width: 60%;
+      opacity: 0.9;
+    }
+  }
+}
