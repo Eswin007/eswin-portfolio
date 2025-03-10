@@ -1,0 +1,207 @@
+@use "sass:color";
+.avatar-wrap {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  & > .left,
+  & > .right {
+    flex: 1;
+    height: 100%;
+    height: 100%;
+  }
+  $face-color: #e6a474;
+  $hair: color.adjust(black, $lightness: 15%);
+  .head {
+    width: 150px;
+    height: 200px;
+    background-color: $face-color;
+    border-radius: 0 40vmax 100vmax 100vmax;
+    position: relative;
+    box-shadow: 10px 10px 2rem rgba(black, 0.2);
+
+    &::after,
+    &::before {
+      width: 25px;
+      height: 40px;
+      content: "";
+      position: absolute;
+      background-color: $face-color;
+      top: 25%;
+      z-index: -1;
+      transform-origin: center;
+    }
+    &::after {
+      right: 95%;
+      transform: rotate(-10deg);
+      border-top-left-radius: 40px 10px;
+      border-bottom-left-radius: 50px 30px;
+      background: linear-gradient(
+        to left,
+        color.adjust($face-color, $lightness: -10%),
+        $face-color
+      );
+    }
+    &::before {
+      left: 94%;
+      background: linear-gradient(
+        to right,
+        color.adjust($face-color, $lightness: -10%),
+        $face-color
+      );
+      border-top-right-radius: 10px 40px;
+      border-bottom-right-radius: 50px 30px;
+      transform: rotate(10deg);
+    }
+
+    .hair {
+      width: 110%;
+      background-color: $hair;
+      height: 40px;
+      right: 10%;
+      position: absolute;
+      border-bottom-left-radius: 100vmax;
+      border-top-right-radius: 50vmax;
+      border-bottom-right-radius: 40vmax;
+      top: -30px;
+
+      &::before {
+        content: "";
+        background-color: inherit;
+        width: 40px;
+        height: 80px;
+        position: absolute;
+        right: -15%;
+        z-index: -2;
+        rotate: 10deg;
+        top: 30%;
+        border-radius: 25vmax 50vmax 60vmax 0;
+      }
+    }
+  }
+
+  .beard {
+    position: absolute;
+    bottom: 0;
+    background-color: $hair;
+    height: 100px;
+    width: 100%;
+    border-radius: 0 0 100vmax 100vmax;
+
+    .mouth {
+      width: 75px;
+      height: 50px;
+      border-radius: 50%;
+      border: 4px solid;
+      border-color: transparent;
+      border-bottom: 10px solid color.adjust($face-color, $lightness: -30%);
+      position: absolute;
+      left: 50%;
+      bottom: 40%;
+      transform: translateX(-50%);
+      transition: all 0.3s ease;
+    }
+  }
+
+  .eyes {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 2.5rem;
+
+    &::after {
+      content: "";
+      height: 40px;
+      position: absolute;
+      width: 25px;
+      left: 50%;
+
+      background: linear-gradient(
+        to top,
+        color.adjust($face-color, $lightness: -20%),
+        $face-color
+      );
+      transform: translateX(-50%);
+      bottom: -45px;
+      border-bottom-left-radius: 10px 15px;
+      border-bottom-right-radius: 10px 15px;
+      filter: drop-shadow(0 5px 3px rgba(black, 0.3));
+    }
+
+    .eye {
+      width: 20px;
+      height: 20px;
+      background-color: black;
+      border-radius: 100%;
+      position: relative;
+      transition: all 0.5s ease;
+
+      &::after {
+        width: 5px;
+        height: 5px;
+        border-radius: 100%;
+        position: absolute;
+        content: "";
+        background-color: white;
+        top: 4px;
+        z-index: 10;
+        right: 3px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 2rem;
+        height: 0.5rem;
+        background-color: $hair;
+        transition: all 0.5s ease;
+        display: block;
+        top: -1rem;
+        border-radius: 100vmax;
+        transform-origin: center;
+      }
+
+      &.right::before {
+        transform: translate(0px, -2px) rotate(20deg);
+      }
+      &.left::before {
+        transform: translate(-15px, -5px) rotate(-20deg);
+      }
+    }
+  }
+
+  .head {
+    &.look-right {
+      .eye {
+        transform: translateX(25%);
+        &.right::before {
+          transform: translate(3px, -3px) rotate(15deg);
+        }
+        &.left::before {
+          transform: translate(-13px, -5px) rotate(-15deg);
+        }
+      }
+
+      .mouth {
+        transform: translateX(-48%) !important;
+      }
+    }
+
+    &.look-left {
+      .eye {
+        transform: translateX(-25%);
+        &.left::before {
+          transform: translate(-15px, -5px) rotate(-15deg);
+        }
+        &.right::before {
+          transform: translate(-3px, -2px) rotate(15deg);
+        }
+      }
+      .mouth {
+        transform: translateX(-52%) !important;
+      }
+    }
+  }
+}

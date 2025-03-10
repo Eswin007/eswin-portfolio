@@ -1,0 +1,365 @@
+@use "sass:color";
+
+$size: 20rem;
+$color: #4a4a4a;
+$offset: 10px;
+$land-clr: grey;
+$sky-clr: linear-gradient(155deg, skyblue 20%, rgb(110, 181, 209));
+$night-clr: linear-gradient(155deg, #26265a 20%, red);
+$duration: 1s;
+$night-sky-clr: #30305e;
+$cloud-clr: white;
+$sun-clr: orange;
+$star-clr: white;
+$moon-clr: #ffd000;
+
+.switch {
+  width: $size;
+  height: calc($size / 2);
+  border-radius: 100vmax;
+  border: 3px solid #838383;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: #fdfdfd;
+  isolation: isolate;
+  background-color: #ddd;
+
+  scale: 0.4;
+
+  &::after {
+    width: 97%;
+    height: 97%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(2px);
+    border-radius: 100vmax;
+    content: " ";
+    background-color: white;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &.active {
+    .circle {
+      background-color: $night-sky-clr;
+      transform: rotate(45deg);
+
+      .day {
+        transform: rotate(-45deg);
+        .cloud {
+          transform: translateY(90%);
+        }
+
+        .sun {
+          background: radial-gradient(orange 50%, hsl(27, 100%, 40%) 100%);
+
+          transform: translateY(380%);
+          transition-delay: 0.08s;
+
+          &::after {
+            opacity: 0;
+          }
+
+          &::before {
+            opacity: 0;
+          }
+        }
+      }
+
+      .night {
+        transform: translateY(0%) rotate(-45deg);
+
+        .land {
+          transform: translateY(0%);
+        }
+
+        .moon {
+          transform: translateY(0%) rotate(35deg);
+
+          &::after {
+            background-color: $night-sky-clr;
+            transition: background-color 0.5s ease;
+          }
+        }
+      }
+    }
+    .switch-toggle {
+      left: calc(100% - $size / 2 + $offset / 2) !important;
+      transition: all $duration ease, background-color 0.5s ease;
+    }
+  }
+
+  .night {
+    transform: translateY(100%) rotate(15deg);
+    position: absolute;
+    inset: 0;
+    z-index: -1000;
+    transition: all $duration ease;
+    .land {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      z-index: 100;
+      background-color: $land-clr;
+      height: calc($size / 6);
+      transition: all $duration ease;
+      transform: translateY(100%);
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, $land-clr 10px, transparent),
+          linear-gradient(-75deg, transparent 10%, white 50%, transparent 90%);
+        opacity: 1;
+        // opacity: 0.5;
+      }
+    }
+
+    .land-shape {
+      background-color: inherit;
+      width: 80%;
+      border-radius: 100%;
+      height: 20px;
+      position: absolute;
+      top: -0.25rem;
+      left: -10px;
+      transform: rotate(7deg);
+
+      &.land-shape2 {
+        transform: rotate(0);
+        top: 0.75rem;
+        left: unset;
+        right: -2.75rem;
+        // background-color: lighten($land-clr, 5);
+        background-color: color.adjust($land-clr, $lightness: 5%);
+
+        filter: blur(2px);
+      }
+    }
+
+    .tree {
+      width: 4px;
+      height: 2rem;
+      position: absolute;
+      background-color: $land-clr;
+      left: 18%;
+      bottom: 100%;
+
+      &::before,
+      &::after {
+        transform: translateX(-50%);
+        left: 50%;
+        border-radius: 100%;
+        content: "";
+        position: absolute;
+        background-color: $land-clr;
+      }
+
+      &::after {
+        width: 15px;
+        height: 15px;
+        bottom: 9px;
+      }
+
+      &::before {
+        width: 10px;
+        height: 10px;
+        top: -2px;
+      }
+    }
+
+    .moon {
+      position: absolute;
+      left: 45%;
+      top: 20%;
+      width: calc($size / 7);
+      aspect-ratio: 1/1;
+      border-radius: 100%;
+      transform: translateY(150%) rotate(35deg);
+      background-color: $moon-clr;
+      transition: all $duration ease;
+      transition-delay: 0.2s;
+      z-index: 20;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: -5px;
+        top: 0;
+        background-color: skyblue;
+        width: calc($size / 8.5);
+        height: calc($size / 7);
+        z-index: 20;
+        border-radius: 100%;
+        transition: all 0.5s ease;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: 15;
+        bottom: 35%;
+        right: 15%;
+        z-index: 5;
+        // background-color: darken($moon-clr, 6);
+        background-color: color.adjust($moon-clr, $lightness: -6%);
+        width: calc($size / 19);
+        border-radius: 100%;
+        aspect-ratio: 1 / 1;
+      }
+
+      .dots {
+        content: "";
+        // background-color: darken($moon-clr, 6);
+        background-color: color.adjust($moon-clr, $lightness: -6%);
+
+        width: calc($size / 52);
+        aspect-ratio: 1 / 1;
+        position: absolute;
+        border-radius: 100%;
+        right: 1.2rem;
+      }
+
+      .dots2 {
+        left: 2rem;
+
+        bottom: 0.28rem;
+      }
+
+      .moon-glow {
+        width: 100%;
+        height: 38%;
+        transform: rotate(-90deg);
+        background-color: white;
+        display: block;
+        position: absolute;
+        right: -10px;
+        bottom: 0.85rem;
+        border-radius: 100%;
+        filter: blur(5px);
+        opacity: 0.3;
+      }
+    }
+
+    .stars {
+      background-size: 35px 35px;
+      background-image: radial-gradient($star-clr 4%, transparent 5%);
+      display: block;
+      width: 100%;
+      height: 100%;
+      transform: rotate(40deg) skewY(5deg);
+      border-radius: 100%;
+      background-repeat: repeat;
+      // mix-blend-mode:luminosity;
+      position: absolute;
+      z-index: 0;
+      transition: all $duration ease;
+      transition-delay: 0.2s;
+    }
+  }
+
+  .gradient {
+    position: absolute;
+    inset: 0;
+    z-index: 90;
+    border-radius: 100%;
+    background-image: radial-gradient(transparent 60%, #666 95%);
+    border-radius: 100%;
+    mix-blend-mode: darken;
+    transition: all $duration ease;
+  }
+  .switch-toggle {
+    z-index: 5;
+    width: calc($size / 2 - $offset);
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    top: 50%;
+    left: calc($offset / 2);
+    transform: translateY(-50%);
+    background-color: $sky-clr;
+    background: $sky-clr;
+    transition: all $duration ease;
+    border-radius: 100%;
+    box-shadow: 0 0 1rem rgba(black, 0.2);
+  }
+
+  .circle {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 100%;
+    box-shadow: 0 0 1rem rgba(black, 0.15);
+    transition: all $duration ease, background-color 0.5s ease;
+    overflow: hidden;
+
+    .day {
+      position: absolute;
+      z-index: 10;
+      height: 100%;
+      width: 100%;
+      transform: rotate(0);
+      transition: all $duration ease;
+
+      .cloud {
+        background-color: $cloud-clr;
+        border-radius: 100%;
+        position: absolute;
+        aspect-ratio: 1 / 1;
+        z-index: 5;
+        transition: all $duration ease;
+      }
+      .cloud1 {
+        width: 4.5rem;
+        left: 10%;
+        top: 60%;
+      }
+
+      .cloud2 {
+        left: 35%;
+        top: 30%;
+        width: 8rem;
+      }
+
+      .sun {
+        background: radial-gradient(orange 50%, hsl(39, 100%, 40%) 100%);
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 100%;
+        position: absolute;
+        top: 13%;
+        left: 20%;
+        transition: all $duration ease;
+        &::before {
+          content: "";
+          width: 50%;
+          background-color: white;
+          height: 50%;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          opacity: 0.5;
+          transform: translateX(-50%) translateY(-50%);
+          border-radius: 100%;
+          filter: blur(3px);
+          transition: all $duration ease;
+          z-index: 5;
+        }
+
+        &::after {
+          content: "";
+          background: inherit;
+          position: absolute;
+          opacity: 0.5;
+          border-radius: 100%;
+          inset: -3px;
+          filter: blur(6px);
+          transition: all $duration ease;
+        }
+      }
+    }
+  }
+}

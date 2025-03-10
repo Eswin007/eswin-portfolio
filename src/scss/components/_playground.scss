@@ -2,12 +2,60 @@
   padding-block: 3rem;
   font-family: var(--fs-secondary);
   color: var(--clr-secondary);
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
 
   &__title {
     font-size: 2rem;
     font-weight: bold;
     grid-column: 1/-1;
+  }
+
+  &__items {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  &__item {
+    aspect-ratio: 1/ 1;
+    background-color: var(--bg-dark-100);
+    border: 1px solid var(--bg-dark-200);
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &:hover {
+      .playground__git-link {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__git-link {
+    background-color: var(--bg-pure);
+    display: flex;
+    align-items: center;
+    color: var(--bg-dark-800);
+    gap: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    line-height: 1;
+    border-radius: 0.25rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.875rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 1px 2px 1rem var(--bg-dark-200);
+
+    &:hover {
+      background-color: var(--bg-dark-800);
+      color: var(--text-pure);
+    }
   }
 }
