@@ -1,8 +1,15 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div className="about-wrap">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      className="about-wrap"
+    >
       <div className="about max-width-wrap">
         <div className="about__title">about.</div>
         <div className="about__subtitle">
@@ -29,7 +36,7 @@ const About = () => {
           perfect shot, composition is everything!
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

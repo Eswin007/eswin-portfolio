@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Social from "../Social";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const [text, setText] = useState("Figma dreams meet React reality");
@@ -15,7 +16,13 @@ const Hero = () => {
     setText("Figma dreams meet React reality");
   };
   return (
-    <div className="hero">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 3 }}
+      className="hero"
+    >
       <div className="hero__content max-width-wrap">
         <div className="hero__left">
           <div className="hero__title title1">designer</div>
@@ -33,7 +40,7 @@ const Hero = () => {
         </div>
       </div>
       <Social />
-    </div>
+    </motion.div>
   );
 };
 

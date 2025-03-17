@@ -8,10 +8,17 @@ import {
   faLink,
 } from "@fortawesome/free-solid-svg-icons";
 import Playground from "./Playground";
+import { motion } from "framer-motion";
 
 const Works = () => {
   return (
-    <div className="works-wrap">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 3 }}
+      className="works-wrap"
+    >
       <div className="works max-width-wrap">
         <div className="works__title">works.</div>
         <div className="works__body">
@@ -43,7 +50,7 @@ const Works = () => {
 
               <a
                 target="_blank"
-                href="https://github.com/Eswin007/directory"
+                href="https://directory-azure.vercel.app/"
                 className="btn btn-primary accent"
               >
                 <FontAwesomeIcon
@@ -58,7 +65,7 @@ const Works = () => {
 
         <Playground />
       </div>
-    </div>
+    </motion.div>
   );
 };
 
