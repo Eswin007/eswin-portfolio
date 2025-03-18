@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Playground from "./Playground";
 import { motion } from "framer-motion";
+import { NavLink, Outlet } from "react-router-dom";
 
 const Works = () => {
   return (
@@ -16,7 +17,7 @@ const Works = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 3 }}
+      transition={{ duration: 0.2 }}
       className="works-wrap"
     >
       <div className="works max-width-wrap">
@@ -36,10 +37,17 @@ const Works = () => {
               deployed on Vercel.
             </p>
             <div className="works__btn-wrap">
-              <a className="btn btn-primary">
+              {/* <a className="btn btn-primary">
                 Case Study{" "}
                 <FontAwesomeIcon className="btn-icon" icon={faArrowRight} />{" "}
-              </a>
+              </a> */}
+              <NavLink className="btn btn-primary" to={`directory-case-study`}>
+                Case Study
+                <FontAwesomeIcon
+                  className="btn-icon"
+                  icon={faArrowRight}
+                />{" "}
+              </NavLink>
               <a
                 target="_blank"
                 href="https://github.com/Eswin007/directory"
