@@ -2,3 +2,62 @@
   margin-inline: auto;
   padding-block: 5rem;
 }
+
+.case-study {
+  color: var(--text-dark-800);
+  font-family: var(--fs-secondary);
+
+  &__cover {
+    margin-block-start: 1rem;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  section {
+
+    padding-inline: 1rem;
+
+    p {
+      line-height: 1.5;
+      font-size: 1.125rem;
+    }
+
+    code {
+      background-color: #eee;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        span {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+
+  &__subtitle {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-accent);
+  }
+
+  &__title {
+    font-family: var(--fs-primary);
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  &__sub-heading {
+    margin-block: 1rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: var(--fs-primary);
+  }
+
+}

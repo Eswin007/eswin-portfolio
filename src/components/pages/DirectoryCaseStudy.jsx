@@ -1,4 +1,5 @@
 import React from "react";
+import coverImage from '../../assets/showcase.jpg';
 
 const DirectoryCaseStudy = () => {
   return (
@@ -6,7 +7,9 @@ const DirectoryCaseStudy = () => {
       <div className="case-study">
         <div className="case-study__subtitle">Case Study</div>
         <div className="case-study__title">Parish Directory</div>
-      </div>
+        <div className="case-study__cover">
+          <img src={coverImage} alt="" />
+        </div>
       <section>
         <div className="case-study__sub-heading">Introduction</div>
         <p>
@@ -39,11 +42,11 @@ const DirectoryCaseStudy = () => {
         <div className="case-study__sub-heading">Target Users & Use Cases</div>
         <ul>
           <li>
-            Office Bearers – Need quick access to contact details for
-            coordination (and don’t want to rely on their memory alone). •
+            <span>Office Bearers</span> – Need quick access to contact details for
+            coordination (and don’t want to rely on their memory alone). 
           </li>
           <li>
-            Church Members – Can easily look up family details without making
+            <span>Church Members</span> – Can easily look up family details without making
             awkward “Who’s that again?”
           </li>
         </ul>
@@ -54,19 +57,19 @@ const DirectoryCaseStudy = () => {
         <div className="case-study__sub-heading">Key Features</div>
         <ul>
           <li>
-            • Search & Filtering – Users can quickly find members by name,
+             <span>Search & Filtering</span> – Users can quickly find members by name,
             family, or category.
           </li>
           <li>
-            • CRUD Operations – The system allows creating, updating, and
+             <span>CRUD Operations</span> – The system allows creating, updating, and
             deleting family and member records.
           </li>
           <li>
-            • Photo Upload & Viewing – Members’ images can be stored and
+             <span>Photo Upload & Viewing</span> – Members’ images can be stored and
             accessed within the directory.
           </li>
           <li>
-            • Dark Mode Support – Adapts to system preferences for better user
+             <span>Dark Mode Support</span> – Adapts to system preferences for better user
             experience.
           </li>
         </ul>
@@ -104,7 +107,7 @@ const DirectoryCaseStudy = () => {
           technical and design challenges, but one major hurdle stood out:
         </p>
         <p>
-          • Database Structure & Table Relationships: I initially planned to
+           Database Structure & Table Relationships: I initially planned to
           have a single table containing both family headers and family members.
           However, this approach resulted in a flat table structure that was
           difficult to read and manage. Since I didn’t have backend support, I
@@ -127,31 +130,34 @@ const DirectoryCaseStudy = () => {
         <p>
           To bring the project to life, I implemented the following solutions:
         </p>
-        <li>
-          Built the frontend using React.js, leveraging a component-based
-          architecture for modularity and maintainability.
-        </li>
-        <li>
-          Structured the layout with HTML and SCSS, following the BEM
-          methodology for naming conventions and partials for better
-          organization.
-        </li>
-        <li>
-          Used Framer Motion to enhance user experience with smooth animations.
-        </li>
-        <li>
-          Implemented a Dark Mode toggle in the web version. On mobile,
-          following the pattern of graceful degradation, the toggle was removed,
-          and the theme adapted to the device's system preference.
-        </li>
-        <li>
-          Used Yup for form validation to ensure data integrity and a smooth
-          user experience.
-        </li>
-        <li>
-          Integrated Font Awesome for icons, maintaining a clean and visually
-          appealing design.
-        </li>
+
+        <ul>
+          <li>
+            Built the frontend using React.js, leveraging a component-based
+            architecture for modularity and maintainability.
+          </li>
+          <li>
+            Structured the layout with HTML and SCSS, following the BEM
+            methodology for naming conventions and partials for better
+            organization.
+          </li>
+          <li>
+            Used Framer Motion to enhance user experience with smooth animations.
+          </li>
+          <li>
+            Implemented a Dark Mode toggle in the web version. On mobile,
+            following the pattern of graceful degradation, the toggle was removed,
+            and the theme adapted to the device's system preference.
+          </li>
+          <li>
+            Used Yup for form validation to ensure data integrity and a smooth
+            user experience.
+          </li>
+          <li>
+            Integrated Font Awesome for icons, maintaining a clean and visually
+            appealing design.
+          </li>
+        </ul>
         <img src="" alt="" />
       </section>
 
@@ -204,6 +210,8 @@ const DirectoryCaseStudy = () => {
         <img src="" alt="" />
       </section>
     </div>
+      </div>
+
   );
 };
 
