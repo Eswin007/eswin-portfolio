@@ -2,6 +2,7 @@
   height: calc(100vh - 13rem);
   width: 100%;
   cursor: default;
+  position: relative;
 
   &__content {
     display: flex;
@@ -10,28 +11,94 @@
     margin-inline: auto;
   }
 
+  &__image {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 1;
+    opacity: .4;
+
+    .image1 .placeholder {
+      background-color: red;
+      display: block;
+      position: absolute;
+      inset: 0;
+    }
+
+    .image2 .placeholder {
+      background-color: green;
+      position: absolute;
+      inset: 0;
+    }
+
+    .image {
+      overflow: hidden;
+      width: 100%;
+      position: absolute;
+      inset: 0;
+      transition: clip-path 2s ease;
+
+      // &.left {
+      //   clip-path: polygon(0 0, 70vw 0, 70vw 100%, 0 100%);
+      // }
+
+
+
+      &.image2 {
+        clip-path: polygon(0 0, 50vw 0, 50vw 100%, 0 100%);
+
+
+        &.left-hovered {
+          clip-path: polygon(0 0, 75vw 0, 75vw 100%, 0 100%);
+          box-shadow: 0 0 1rem rgba(black, .25);
+        }
+
+        &.right-hovered {
+          clip-path: polygon(0 0, 25vw 0, 25vw 100%, 0 100%);
+          box-shadow: 0 0 1rem rgba(black, .25);
+        }
+
+      }
+
+
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        object-position: 0 -20%;
+      }
+    }
+  }
+
   &__left,
   &__right {
     height: 100%;
     flex: 1;
     display: grid;
     align-content: center;
+    position: relative;
+    z-index: 50;
+    // pointer-events: none;
   }
 
   &__right {
     justify-content: flex-end;
+
   }
+
+
 
   &__title {
     font-size: 5.125rem;
     font-family: var(--fs-primary);
     font-weight: bold;
     letter-spacing: -1px;
+    filter: drop-shadow(1px 2px 1rem rgba(black, .25));
   }
 
   &__subtitle {
     font-size: 1.125rem;
-    color: var(--text-dark-700);
+    // color: var(--text-dark-700);
     font-family: var(--fs-secondary);
     margin-top: 0.75rem;
     line-height: 1.5;
@@ -39,4 +106,14 @@
     padding: 1px;
     display: block;
   }
+}
+
+// .hero:hover {
+//   .image2 {
+//     clip-path: polygon(0 0, 30vw 0, 30vw 100%, 0 100%);
+//   }
+// }
+
+.hero .hero__left:hover+.hero__image .image2 {
+  clip-path: polygon(0 0, 70vw 0, 70vw 100%, 0 100%);
 }
