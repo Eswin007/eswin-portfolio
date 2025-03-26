@@ -1,7 +1,18 @@
+@use '../mixins' as *;
+
 .works {
   margin-inline: auto;
   padding-block: 5rem;
   color: var(--text-dark-800);
+
+  @include respond(tablet) {
+    padding-block: 3rem;
+  }
+
+  @include respond(mobile) {
+    padding-block: 2rem;
+  }
+
   &__title {
     font-size: 5.125rem;
     font-weight: bold;
@@ -13,6 +24,14 @@
     line-height: 1.5;
     font-family: var(--fs-secondary);
     opacity: 0.9;
+
+    @include respond(tablet) {
+      width: 90%;
+    }
+
+    @include respond(mobile) {
+      width: 100%;
+    }
   }
 
   &__directory {
@@ -23,8 +42,22 @@
     font-family: var(--fs-secondary);
     justify-content: space-between;
 
+    @include respond(tablet) {
+      max-width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
     &-details {
       padding: 3rem;
+
+      @include respond(tablet) {
+        padding: 0;
+      }
     }
 
     h3 {
@@ -32,6 +65,7 @@
 
       color: var(--text-dark-800);
     }
+
     p {
       margin-block: 1rem;
       line-height: 1.5;

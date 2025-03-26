@@ -1,0 +1,29 @@
+@mixin respond($size) {
+    @if $size ==desktop {
+        @media only screen and (min-width: 87.5em) {
+            //1400px
+            @content;
+        }
+    }
+
+    @else if $size ==laptop {
+        @media only screen and (max-width: 85.375em) {
+            //1366px
+            @content;
+        }
+    }
+
+    @else if $size ==tablet {
+        @media only screen and (max-width: 76.5em) {
+            //1224px
+            @content;
+        }
+    }
+
+    @else if $size ==mobile {
+        @media only screen and (max-width: 40.625em) {
+            //700px
+            @content;
+        }
+    }
+}
