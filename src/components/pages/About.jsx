@@ -10,7 +10,7 @@ const About = () => {
           I'm a UI/UX Designer based in Kerala, India.
         </div>
         <div className="about__body">
-          From the beginnning of my design career, I’ve enjoyed untangling complex problems and transforming
+          From the beginning of my design career, I’ve enjoyed untangling complex problems and transforming
           them into simple, elegant designs. 
         </div>
 
@@ -20,7 +20,8 @@ const About = () => {
           UI in Figma, designing stunning visuals in Photoshop and Illustrator,
           or adding motion magic with After Effects and Premiere Pro, I love
           blending creativity with precision. My skills go beyond design — I write
-          clean, structured code using HTML, CSS, SCSS, JavaScript, and React,
+          clean, structured code using HTML, CSS, SCSS, JavaScript, 
+          and React,
           ensuring smooth front-end development. When I'm not pushing pixels, 
           you’ll likely find me behind a camera, capturing the moments — because whether it’s a UI or a
           perfect shot, composition is everything!
