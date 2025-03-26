@@ -9,9 +9,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <AnimatePresence>
-        <Outlet />
-      </AnimatePresence>
+      <Outlet />
     </>
   );
 };

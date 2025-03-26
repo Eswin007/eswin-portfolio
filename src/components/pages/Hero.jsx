@@ -32,11 +32,8 @@ const Hero = () => {
   // }
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 3 }}
+    <div
+    
       className="hero"
     >
       <div className="hero__content max-width-wrap">
@@ -67,7 +64,7 @@ const Hero = () => {
         </div>
       </div>
       <Social />
-    </motion.div>
+    </div>
   );
 };
 

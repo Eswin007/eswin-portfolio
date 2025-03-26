@@ -55,7 +55,7 @@ const DirectoryCaseStudy = () => {
 
       <section>
         <div className="case-study__sub-heading">Key Features</div>
-        <ul>
+        <ul className="case-study__key-features">
           <li>
              <span>Search & Filtering</span> – Users can quickly find members by name,
             family, or category.
@@ -107,7 +107,7 @@ const DirectoryCaseStudy = () => {
           technical and design challenges, but one major hurdle stood out:
         </p>
         <p>
-           Database Structure & Table Relationships: I initially planned to
+           <strong>Database Structure & Table Relationships:</strong> I initially planned to
           have a single table containing both family headers and family members.
           However, this approach resulted in a flat table structure that was
           difficult to read and manage. Since I didn’t have backend support, I
@@ -131,14 +131,16 @@ const DirectoryCaseStudy = () => {
           To bring the project to life, I implemented the following solutions:
         </p>
 
-        <ul>
+        <ul className="case-study__features">
           <li>
-            Built the frontend using React.js, leveraging a component-based
+            Built the frontend using <strong>React.js</strong>, leveraging a component-based
             architecture for modularity and maintainability.
           </li>
           <li>
-            Structured the layout with HTML and SCSS, following the BEM
-            methodology for naming conventions and partials for better
+            Structured the layout with HTML and SCSS, following the <i>
+              BEM
+              methodology
+            </i> for naming conventions and partials for better
             organization.
           </li>
           <li>

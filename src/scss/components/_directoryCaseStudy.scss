@@ -60,4 +60,50 @@
     font-family: var(--fs-primary);
   }
 
+  &__features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+
+    li {
+      border-radius: .5rem;
+      padding: 1rem;
+      border: 1px solid #ccc;
+
+      &:nth-child(1) {
+        background-color: hsl(20, 100%, 95%);
+      }
+
+      &:nth-child(2) {
+        background-color: hsl(60, 100%, 95%);
+      }
+
+      &:nth-child(3) {
+        background-color: hsl(100, 100%, 95%);
+      }
+
+      &:nth-child(4) {
+        background-color: hsl(140, 100%, 95%);
+      }
+
+      &:nth-child(5) {
+        background-color: hsl(180, 100%, 95%);
+      }
+
+      &:nth-child(6) {
+        background-color: hsl(220, 100%, 95%);
+      }
+    }
+
+
+
+  }
+
+  &__key-features {
+    li+li {
+      margin-top: .5rem;
+    }
+  }
+
 }

@@ -26,36 +26,57 @@
     position: relative;
 
     &:hover {
-      .playground__git-link {
+      .playground__link-wrap {
         opacity: 1;
         visibility: visible;
       }
     }
   }
 
-  &__git-link {
-    background-color: var(--bg-pure);
+  &__link-wrap {
+    position: absolute;
     display: flex;
     align-items: center;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    gap: .5rem;
+    z-index: 10;
+  }
+
+  &__yt-link,
+  &__git-link {
+    padding: 0.5rem 1rem;
+    line-height: 1;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-pure);
     color: var(--bg-dark-800);
     gap: 0.5rem;
     text-decoration: none;
     font-weight: bold;
-    padding: 0.5rem 1rem;
-    line-height: 1;
-    border-radius: 0.25rem;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 0.875rem;
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.3s ease;
-    box-shadow: 1px 2px 1rem var(--bg-dark-200);
+    box-shadow: 1px 2px 1rem rgba(black, .3);
+
+    &:is(.playground__yt-link) {
+      color: red;
+    }
 
     &:hover {
       background-color: var(--bg-dark-800);
       color: var(--text-pure);
+
+      &:is(.playground__yt-link) {
+        background-color: red;
+      }
     }
+
+
+
   }
+
 }

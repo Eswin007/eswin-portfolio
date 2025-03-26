@@ -13,13 +13,7 @@ import { NavLink, Outlet } from "react-router-dom";
 
 const Works = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.2 }}
-      className="works-wrap"
-    >
+    <div className="works-wrap">
       <div className="works max-width-wrap">
         <div className="works__title">works.</div>
         <div className="works__body">
@@ -73,7 +67,7 @@ const Works = () => {
 
         <Playground />
       </div>
-    </motion.div>
+    </div>
   );
 };
 
