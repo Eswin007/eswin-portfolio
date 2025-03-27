@@ -3,6 +3,14 @@
 .directory-case-study {
   margin-inline: auto;
   padding-block: 5rem;
+
+  @include respond(tablet) {
+    padding-block: 3rem;
+  }
+
+  @include respond(mobile) {
+    padding-block: 2rem;
+  }
 }
 
 .case-study {
@@ -51,12 +59,26 @@
     font-weight: 600;
     margin-bottom: 1rem;
     color: var(--text-accent);
+
+    @include respond(tablet) {
+      margin-bottom: .75rem;
+    }
+
+    @include respond(mobile) {
+      margin-bottom: .5rem;
+    }
   }
 
   &__title {
     font-family: var(--fs-primary);
     font-size: 3rem;
     font-weight: bold;
+
+    @include respond(tablet) {
+      font-size: 2rem;
+    }
+
+
   }
 
   &__sub-heading {

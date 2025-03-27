@@ -6,15 +6,32 @@
     padding-block: 5rem;
     color: var(--text-dark-800);
 
+    @include respond(tablet) {
+      padding-block: 3rem;
+    }
+
+    @include respond(mobile) {
+      padding-block: 2rem;
+    }
+
     &__title {
       font-size: 5.125rem;
       font-weight: bold;
+
+      @include respond(tablet) {
+        font-size: 4rem;
+      }
+
+      @include respond(mobile) {
+        font-size: 3rem;
+      }
     }
 
     &__subtitle {
       font-family: var(--fs-secondary);
       font-size: 1.5rem;
       margin-bottom: 1.5rem;
+
     }
 
     &__body {

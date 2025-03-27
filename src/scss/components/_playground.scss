@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 .playground {
   padding-block: 3rem;
   font-family: var(--fs-secondary);
@@ -24,6 +26,8 @@
     display: flex;
     align-items: center;
     position: relative;
+    justify-content: center;
+
 
     &:hover {
       .playground__link-wrap {
@@ -45,6 +49,11 @@
     transition: all 0.3s ease;
     gap: .5rem;
     z-index: 10;
+
+    @include respond(mobile) {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 
   &__yt-link,
@@ -62,6 +71,12 @@
     font-weight: bold;
     box-shadow: 1px 2px 1rem rgba(black, .3);
 
+    @include respond(mobile) {
+      box-shadow: none;
+
+      font-size: 2rem;
+    }
+
     &:is(.playground__yt-link) {
       color: red;
     }
@@ -77,6 +92,12 @@
 
 
 
+  }
+
+  &__git-link {
+    @include respond(mobile) {
+      display: none;
+    }
   }
 
 }

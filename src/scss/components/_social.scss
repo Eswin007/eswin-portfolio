@@ -1,6 +1,9 @@
+@use '../mixins' as *;
+
 .social-wrap {
   background-color: var(--bg-dark-800);
 }
+
 .social {
   display: flex;
   align-items: center;
@@ -9,6 +12,7 @@
   margin-inline: auto;
   justify-content: center;
   height: 8rem;
+
 
   &__link {
     text-decoration: none;
