@@ -14,7 +14,7 @@
   &__items {
     margin-top: 2rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     gap: 1rem;
   }
 
@@ -27,7 +27,17 @@
     align-items: center;
     position: relative;
     justify-content: center;
+    overflow: hidden;
 
+
+    &.retro-lamp {
+      background-color: black;
+      ;
+
+      .lamp-wrap {
+        transform: scale(.5) translateY(-1.5rem);
+      }
+    }
 
     &:hover {
       .playground__link-wrap {

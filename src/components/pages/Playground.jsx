@@ -4,6 +4,7 @@ import Avatar from "../playground/Avatar";
 import HeartToggle from "../playground/HeartToggle";
 import { faGithub, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Lamp from "../playground/Lamp";
 
 const Playground = () => {
   return (
@@ -48,6 +49,21 @@ const Playground = () => {
             </a>
           </div>
           <HeartToggle />
+        </div>
+        
+        <div className="playground__item retro-lamp">
+          <div className="playground__link-wrap">
+           <a target="_blank" href="https://www.youtube.com/shorts/7ka-ZuIpvD4" className="playground__yt-link"><FontAwesomeIcon icon={faYoutube} /></a>
+
+            <a
+              target="_blank"
+              href="https://github.com/Eswin007/directory"
+              className="playground__git-link"
+            >
+              <FontAwesomeIcon className="btn-icon" icon={faGithub} /> Github
+            </a>
+          </div>
+          <Lamp />
         </div>
       </div>
     </div>
