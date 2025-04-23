@@ -54,7 +54,7 @@ const Playground = () => {
         
         <div className="playground__item retro-lamp">
           <div className="playground__link-wrap">
-           <a target="_blank" href="https://www.youtube.com/shorts/7ka-ZuIpvD4" className="playground__yt-link"><FontAwesomeIcon icon={faYoutube} /></a>
+           <a target="_blank" href="https://www.youtube.com/shorts/_ZTENFW1JEw" className="playground__yt-link"><FontAwesomeIcon icon={faYoutube} /></a>
 
             <a
               target="_blank"
