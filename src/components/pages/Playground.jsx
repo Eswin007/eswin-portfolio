@@ -19,7 +19,7 @@ const Playground = () => {
             href="https://xwnc4t.csb.app/"
             className="playground__git-link"
           >
-            <FontAwesomeIcon className="btn-icon" icon={faGithub} /> Github
+            <FontAwesomeIcon className="btn-icon" icon={faCode} /> Sandbox
           </a>
           </div>
           <DayNightToggle />
@@ -32,7 +32,7 @@ const Playground = () => {
               href="https://mj8xqc.csb.app/"
               className="playground__git-link"
               >
-              <FontAwesomeIcon className="btn-icon" icon={faGithub} /> Sandbox
+              <FontAwesomeIcon className="btn-icon" icon={faCode} /> Sandbox
             </a>
               </div>
             <Avatar />
