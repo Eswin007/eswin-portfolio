@@ -1,4 +1,4 @@
-@use '../mixins' as *;
+@use "../mixins" as *;
 
 .directory-case-study {
   margin-inline: auto;
@@ -26,11 +26,10 @@
   }
 
   section {
-
     padding-inline: 1rem;
 
     @include respond(mobile) {
-      padding-inline: .5rem;
+      padding-inline: 0.5rem;
     }
 
     p {
@@ -45,6 +44,12 @@
     ul {
       list-style: none;
 
+      &.case-study__improvement-points {
+        margin-top: 0.5rem;
+        font-size: 1.125rem;
+        font-weight: 500;
+      }
+
       li {
         span {
           font-weight: bold;
@@ -53,7 +58,6 @@
     }
   }
 
-
   &__subtitle {
     text-transform: uppercase;
     font-weight: 600;
@@ -61,11 +65,11 @@
     color: var(--text-accent);
 
     @include respond(tablet) {
-      margin-bottom: .75rem;
+      margin-bottom: 0.75rem;
     }
 
     @include respond(mobile) {
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
     }
   }
 
@@ -77,8 +81,6 @@
     @include respond(tablet) {
       font-size: 2rem;
     }
-
-
   }
 
   &__sub-heading {
@@ -103,7 +105,7 @@
     }
 
     li {
-      border-radius: .5rem;
+      border-radius: 0.5rem;
       padding: 1rem;
       border: 1px solid #ccc;
 
@@ -131,15 +133,11 @@
         background-color: hsl(220, 100%, 95%);
       }
     }
-
-
-
   }
 
   &__key-features {
-    li+li {
-      margin-top: .5rem;
+    li + li {
+      margin-top: 0.5rem;
     }
   }
-
 }

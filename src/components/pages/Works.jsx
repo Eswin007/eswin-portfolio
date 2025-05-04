@@ -52,7 +52,7 @@ const Works = () => {
 
               <a
                 target="_blank"
-                href="https://directory-azure.vercel.app/"
+                href="https://directoryproject.eswindixon.com/"
                 className="btn btn-primary accent"
               >
                 <FontAwesomeIcon
